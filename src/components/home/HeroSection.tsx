@@ -79,8 +79,8 @@ export default function HeroSection() {
               {/* Main Circular/Arched Card */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white aspect-[4/5]">
                 <Image
-                  src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=1000&q=80"
-                  alt="Aayusha Swad Traditional Snacks"
+                  src="/thek.png"
+                  alt="Aayusha Swad Traditional Desi Ghee Thekua"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 500px"

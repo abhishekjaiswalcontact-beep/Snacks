@@ -19,7 +19,7 @@ export default function GallerySection() {
       title: "Pure Desi Ghee Thekua",
       subtitle: "Hand-pressed with carved wooden moulds",
       tag: "Heritage Bihari",
-      image: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=800&q=80",
+      image: "/thek.png",
       span: "col-span-1 row-span-1",
     },
     {

@@ -18,7 +18,7 @@ export const CATEGORIES: CategoryItem[] = [
     hindiName: "ठेकुआ",
     tagline: "Heritage Bihari Delicacy",
     description: "Hand-pressed traditional festive cookies crafted with whole wheat, ghee, fennel, and jaggery.",
-    image: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=900&q=80",
+    image: "/thek.png",
     itemCount: 2,
   },
   {
@@ -196,7 +196,7 @@ export const PRODUCTS: Product[] = [
     features: ["Pure Desi Ghee Crafting", "Zero Maida / Refined Flour", "Hand-Pressed Traditional Moulds", "Authentic Heritage Recipe"],
     storageInstructions: "Store in a cool dry airtight tin. Stays fresh and crisp for up to 45 days.",
     images: [
-      "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=900&q=80",
+      "/thek.png",
       "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80",
     ],
     tags: ["Thekua", "Desi Ghee", "Festive", "Bestseller"],
@@ -225,7 +225,7 @@ export const PRODUCTS: Product[] = [
     features: ["100% Refined Sugar Free", "Naturally Sweetened", "Rich in Iron & Jaggery Goodness", "Artisanal Batch"],
     storageInstructions: "Keep in a dry airtight container. Do not refrigerate.",
     images: [
-      "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=900&q=80",
+      "/thek.png",
     ],
     tags: ["Thekua", "Jaggery", "Sugar Free"],
   },

@@ -66,8 +66,8 @@ export default function AboutPage() {
           <div className="lg:col-span-6">
             <div className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white aspect-[4/3] bg-cream-100">
               <Image
-                src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=1000&q=80"
-                alt="Aayusha Swad Traditional Kitchen"
+                src="/thek.png"
+                alt="Aayusha Swad Handcrafted Thekua"
                 fill
                 sizes="(max-width: 1024px) 100vw, 600px"
                 className="object-cover"
