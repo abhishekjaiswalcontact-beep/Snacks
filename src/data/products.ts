@@ -466,7 +466,7 @@ export const BRAND_CONFIG = {
   phone: "+91 73035 97191",
   whatsappNumber: "917303597191",
   address: "Handcrafted with pride in India",
-  instagram: "https://instagram.com/aayushaswad",
+  instagram: "https://instagram.com/aayusha_swad",
   currency: "₹",
   freeShippingThreshold: 499,
   standardShippingFee: 50,
