@@ -14,9 +14,7 @@ import {
   ChevronRight,
   ChevronDown,
   ArrowRight,
-  Heart,
-  ShieldCheck,
-  Award
+  ShieldCheck
 } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { BRAND_CONFIG, CATEGORIES } from "@/data/products";
@@ -147,13 +145,14 @@ export default function Navbar() {
   return (
     <>
       {/* 1. TOP ANNOUNCEMENT & TRUST RIBBON */}
-      <div className="bg-[#2A170D] text-cream-100 text-xs py-2 px-4 border-b border-turmeric-500/20 relative z-50">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+      <div className="bg-[#2A170D] text-cream-100 text-[11px] sm:text-xs py-1.5 sm:py-2 px-2.5 sm:px-4 border-b border-turmeric-500/20 relative z-50 overflow-hidden">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
           {/* Left Announcement */}
-          <div className="flex items-center gap-2 mx-auto md:mx-0 text-center">
-            <Sparkles className="w-3.5 h-3.5 text-turmeric-400 shrink-0 animate-pulse" />
+          <div className="flex items-center gap-1.5 sm:gap-2 mx-auto md:mx-0 text-center">
+            <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-turmeric-400 shrink-0 animate-pulse" />
             <span className="font-sans font-medium tracking-wide text-cream-200">
-              Festive Warmth: Free Delivery Across India on Orders Above ₹{BRAND_CONFIG.freeShippingThreshold}!
+              <span className="hidden sm:inline">Festive Warmth: </span>
+              Free Delivery Across India on Orders Above ₹{BRAND_CONFIG.freeShippingThreshold}!
             </span>
             <span className="hidden lg:inline-block text-turmeric-400 font-serif text-[11px] px-2 py-0.5 rounded-full bg-turmeric-500/10 border border-turmeric-400/30">
               परंपरा का स्वाद
@@ -161,7 +160,7 @@ export default function Navbar() {
           </div>
 
           {/* Right Trust Indicators */}
-          <div className="hidden md:flex items-center gap-5 text-xs text-cream-300">
+          <div className="hidden md:flex items-center gap-4 text-xs text-cream-300 shrink-0">
             <span className="flex items-center gap-1.5 text-cream-300/90 hover:text-turmeric-300 transition">
               <ShieldCheck className="w-3.5 h-3.5 text-turmeric-400" />
               <span>Handcrafted in Small Batches</span>
@@ -179,7 +178,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* 2. MAIN HEADER (BRAND IDENTITY + SEARCH + CART + SHOP NOW) */}
+      {/* 2. MAIN HEADER (ENLARGED LOGO + SEARCH + CART + SHOP NOW) */}
       <header
         className={`sticky top-0 z-40 w-full transition-all duration-300 ${
           scrolled
@@ -190,57 +189,43 @@ export default function Navbar() {
         {/* Subtle Indian ornamental top hairline */}
         <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-turmeric-400 to-transparent opacity-80" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-3 sm:gap-6 py-2.5 sm:py-3.5">
-            {/* Mobile Hamburger Menu Toggle */}
-            <button
-              onClick={() => setMobileMenuOpen(true)}
-              className="lg:hidden p-2 -ml-1 text-[#2A170D] hover:text-turmeric-600 hover:bg-cream-200/60 rounded-lg focus:outline-none transition"
-              aria-label="Open mobile navigation menu"
-            >
-              <Menu className="w-6 h-6" />
-            </button>
+        <div className="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between gap-1.5 sm:gap-4 py-2 sm:py-2.5 md:py-3">
+            {/* LEFT: Mobile Hamburger & Enlarged Logo (Brand text removed) */}
+            <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
+              {/* Mobile Hamburger Menu Toggle */}
+              <button
+                onClick={() => setMobileMenuOpen(true)}
+                className="lg:hidden p-1.5 sm:p-2 -ml-1 text-[#2A170D] hover:text-turmeric-600 hover:bg-cream-200/60 rounded-lg focus:outline-none transition shrink-0"
+                aria-label="Open mobile navigation menu"
+              >
+                <Menu className="w-5.5 h-5.5 sm:w-6 sm:h-6" />
+              </button>
 
-            {/* BRAND LOGO & NAME & TAGLINE */}
-            <Link
-              href="/"
-              className="flex items-center gap-3 sm:gap-4 group shrink-0"
-              title="Aayusha Swad — Home"
-            >
-              {/* Circular Emblem Container for logo.png */}
-              <div className="relative w-11 h-11 sm:w-13 sm:h-13 md:w-14 md:h-14 lg:w-15 lg:h-15 rounded-full p-[2px] bg-gradient-to-tr from-turmeric-500 via-saffron-500 to-earth-600 shadow-md group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
-                <div className="w-full h-full rounded-full overflow-hidden bg-[#FAF6F0] flex items-center justify-center">
-                  <Image
-                    src="/logo.png"
-                    alt="Aayusha Swad Brand Logo"
-                    width={60}
-                    height={60}
-                    priority
-                    className="w-full h-full object-cover rounded-full"
-                  />
+              {/* BRAND LOGO ONLY (PROMINENT & ENLARGED, 1:1 RATIO STRICTLY PRESERVED) */}
+              <Link
+                href="/"
+                className="flex items-center group shrink-0"
+                title="Aayusha Swad — Home"
+                aria-label="Aayusha Swad Home"
+              >
+                <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-[72px] lg:h-[72px] rounded-full p-[2px] sm:p-[2.5px] bg-gradient-to-tr from-turmeric-500 via-saffron-500 to-earth-600 shadow-md group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+                  <div className="w-full h-full rounded-full overflow-hidden bg-[#FAF6F0] flex items-center justify-center">
+                    <Image
+                      src="/logo.png"
+                      alt="Aayusha Swad Logo"
+                      width={72}
+                      height={72}
+                      priority
+                      className="w-full h-full object-cover rounded-full"
+                    />
+                  </div>
                 </div>
-              </div>
-
-              {/* Brand Typography */}
-              <div className="flex flex-col justify-center">
-                <div className="flex items-baseline gap-1.5">
-                  <span className="font-serif text-xl sm:text-2xl lg:text-[27px] font-extrabold tracking-tight text-[#2A170D] group-hover:text-earth-700 transition-colors">
-                    Aayusha Swad
-                  </span>
-                  <span className="text-[10px] sm:text-xs font-serif font-bold text-turmeric-600 hidden sm:inline-block">
-                    ™
-                  </span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <span className="text-[11px] sm:text-xs font-serif italic font-medium tracking-wide text-saffron-600 group-hover:text-saffron-700 transition-colors">
-                    Traditional Taste, Made with Love
-                  </span>
-                </div>
-              </div>
-            </Link>
+              </Link>
+            </div>
 
             {/* CENTER SEARCH BAR (Desktop) */}
-            <div className="hidden lg:flex flex-1 max-w-md mx-4">
+            <div className="hidden lg:flex flex-1 max-w-md mx-4 xl:mx-8">
               <form onSubmit={handleSearchSubmit} className="relative w-full">
                 <input
                   type="text"
@@ -259,58 +244,58 @@ export default function Navbar() {
               </form>
             </div>
 
-            {/* RIGHT ACTION BUTTONS: Search, Cart, SHOP NOW */}
-            <div className="flex items-center gap-2 sm:gap-3">
+            {/* RIGHT ACTION BUTTONS: Search Toggle, Cart, Prominent SHOP NOW CTA */}
+            <div className="flex items-center gap-1 sm:gap-2.5 shrink-0">
               {/* Mobile / Tablet Search Toggle */}
               <button
                 onClick={() => setSearchOpen(!searchOpen)}
-                className="lg:hidden p-2 text-[#2A170D] hover:text-turmeric-600 hover:bg-cream-200/60 rounded-full transition"
+                className="lg:hidden p-1.5 sm:p-2 text-[#2A170D] hover:text-turmeric-600 hover:bg-cream-200/60 rounded-full transition shrink-0"
                 aria-label="Toggle search input"
               >
-                <Search className="w-5 h-5" />
+                <Search className="w-4.5 h-4.5 sm:w-5 sm:h-5" />
               </button>
 
               {/* Shopping Cart Button */}
               <button
                 onClick={() => setIsCartOpen(true)}
-                className="relative p-2 sm:p-2.5 text-[#2A170D] hover:text-turmeric-600 hover:bg-cream-200/70 rounded-full transition flex items-center justify-center group"
+                className="relative p-1.5 sm:p-2.5 text-[#2A170D] hover:text-turmeric-600 hover:bg-cream-200/70 rounded-full transition flex items-center justify-center group shrink-0"
                 aria-label={`Shopping Cart with ${totalItems} items`}
               >
                 <ShoppingBag className="w-5 h-5 sm:w-6 sm:h-6 transition-transform group-hover:scale-105" />
                 {totalItems > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-gradient-to-r from-saffron-500 to-turmeric-500 text-white font-bold text-[10px] sm:text-[11px] rounded-full min-w-[19px] h-[19px] px-1 flex items-center justify-center shadow-md animate-bounce ring-2 ring-white">
+                  <span className="absolute -top-1 -right-1 bg-gradient-to-r from-saffron-500 to-turmeric-500 text-white font-bold text-[9px] sm:text-[11px] rounded-full min-w-[17px] h-[17px] sm:min-w-[19px] sm:h-[19px] px-1 flex items-center justify-center shadow-md animate-bounce ring-2 ring-white">
                     {totalItems}
                   </span>
                 )}
               </button>
 
-              {/* Prominent "SHOP NOW" CTA Button */}
+              {/* Prominent "SHOP NOW" CTA Button (Fully responsive, never truncated) */}
               <Link
                 href="/shop"
-                className="inline-flex items-center gap-1.5 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-[#2A170D] hover:bg-[#3F2314] text-white text-xs sm:text-xs font-bold tracking-wider uppercase shadow-md hover:shadow-lg hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 group border border-turmeric-400/30"
+                className="inline-flex items-center justify-center gap-1 sm:gap-1.5 px-3 py-1.5 sm:px-5 sm:py-2.5 rounded-full bg-[#2A170D] hover:bg-[#3F2314] text-white text-[11px] sm:text-xs font-bold tracking-wider uppercase shadow-md hover:shadow-lg hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 group border border-turmeric-400/30 shrink-0 whitespace-nowrap"
               >
                 <span>Shop Now</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 group-hover:translate-x-1 transition-transform shrink-0" />
               </Link>
             </div>
           </div>
 
-          {/* COLLAPSIBLE SEARCH BAR (for Mobile / Tablet or triggered search) */}
+          {/* COLLAPSIBLE SEARCH BAR (for Mobile / Tablet) */}
           {searchOpen && (
-            <div className="lg:hidden pt-2 pb-3 border-t border-turmeric-200 animate-fadeIn">
-              <form onSubmit={handleSearchSubmit} className="relative max-w-xl mx-auto flex items-center">
+            <div className="lg:hidden pt-1.5 pb-2.5 border-t border-turmeric-200 animate-fadeIn">
+              <form onSubmit={handleSearchSubmit} className="relative w-full flex items-center">
                 <input
                   ref={searchInputRef}
                   type="text"
-                  placeholder="Search makhana, thekua, nankhatai, mathri..."
+                  placeholder="Search makhana, thekua, nankhatai..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-24 py-2.5 rounded-full border border-turmeric-300 bg-white text-earth-800 text-sm focus:outline-none focus:ring-2 focus:ring-turmeric-400 placeholder-earth-400 shadow-sm"
+                  className="w-full pl-9 pr-20 py-2 rounded-full border border-turmeric-300 bg-white text-earth-800 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-turmeric-400 placeholder-earth-400 shadow-sm"
                 />
-                <Search className="w-4 h-4 text-turmeric-600 absolute left-3.5 top-3.5" />
+                <Search className="w-4 h-4 text-turmeric-600 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                 <button
                   type="submit"
-                  className="absolute right-1.5 top-1.5 px-4 py-1.5 bg-turmeric-400 hover:bg-turmeric-500 text-earth-900 text-xs font-bold rounded-full transition shadow-xs"
+                  className="absolute right-1 top-1/2 -translate-y-1/2 px-3 py-1 bg-turmeric-400 hover:bg-turmeric-500 text-earth-900 text-xs font-bold rounded-full transition shadow-xs"
                 >
                   Search
                 </button>
@@ -530,24 +515,24 @@ export default function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center gap-3"
               >
-                <div className="relative w-10 h-10 rounded-full p-[1.5px] bg-gradient-to-tr from-turmeric-400 via-saffron-500 to-earth-600 shadow-sm shrink-0">
-                  <div className="w-full h-full rounded-full overflow-hidden bg-white">
+                <div className="relative w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-turmeric-400 via-saffron-500 to-earth-600 shadow-sm shrink-0">
+                  <div className="w-full h-full rounded-full overflow-hidden bg-white flex items-center justify-center">
                     <Image
                       src="/logo.png"
                       alt="Aayusha Swad"
-                      width={40}
-                      height={40}
+                      width={48}
+                      height={48}
                       className="w-full h-full object-cover rounded-full"
                     />
                   </div>
                 </div>
                 <div className="flex flex-col">
-                  <h3 className="font-serif font-bold text-base text-cream-100 tracking-tight">
+                  <span className="font-serif font-bold text-base text-cream-100 tracking-tight">
                     Aayusha Swad
-                  </h3>
-                  <p className="text-[10px] font-serif italic text-saffron-300">
+                  </span>
+                  <span className="text-[10px] font-serif italic text-saffron-300">
                     Traditional Taste, Made with Love
-                  </p>
+                  </span>
                 </div>
               </Link>
               <button
