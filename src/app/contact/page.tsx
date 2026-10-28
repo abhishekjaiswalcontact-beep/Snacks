@@ -36,15 +36,15 @@ export default function ContactPage() {
   const faqs = [
     {
       q: "What is the shelf life of Aayusha Swad snacks?",
-      a: "Our roasted makhana and savory namak para have a shelf life of 60 to 90 days in airtight packaging. Our Thekua and Nankhatai remain crisp and fragrant for up to 45 days when stored in a cool, dry place.",
+      a: "Our slow-roasted makhana varieties have a shelf life of 60 to 90 days in airtight packaging. Our handcrafted Thekua remains crisp and fragrant for up to 45 days when stored in a cool, dry place.",
     },
     {
       q: "Do you offer corporate gifting or bulk wedding orders?",
-      a: "Yes! We specialize in curated heritage gift boxes with customized assortments of Desi Ghee Thekua, Nankhatai, and flavoured foxnuts for weddings, Diwali, corporate events, and family festivities. Reach out via WhatsApp or our contact form.",
+      a: "Yes! We specialize in curated heritage gift boxes with customized assortments of pure Desi Ghee Thekua and our five flavoured roasted Makhana packs for weddings, Diwali, corporate events, and festivities. Reach out via WhatsApp or our contact form.",
     },
     {
       q: "Are your snacks fasting (Vrat) friendly?",
-      a: "Our Himalayan Pink Salt Makhana is prepared with rock salt (Sendha Namak) and roasted in pure peanut oil, making it suitable for religious fasts (Vrat). We clearly label all ingredients on every product page.",
+      a: "Our Salted & Black Pepper Makhana is prepared with unrefined Himalayan rock salt (Sendha Namak) and roasted in pure peanut oil, making it suitable for religious fasts (Vrat). We clearly label all ingredients on every product page.",
     },
     {
       q: "How does delivery work across India?",

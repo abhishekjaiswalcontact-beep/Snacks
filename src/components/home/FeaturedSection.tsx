@@ -2,9 +2,9 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Sparkles, Filter } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { PRODUCTS } from "@/data/products";
-import { Product, ProductCategory } from "@/types";
+import { Product } from "@/types";
 import ProductCard from "@/components/products/ProductCard";
 import QuickViewModal from "@/components/products/QuickViewModal";
 
@@ -12,18 +12,11 @@ export default function FeaturedSection() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
 
-  const categories = [
-    "All",
-    "Makhana",
-    "Thekua",
-    "Traditional Cookies",
-    "Namak Para",
-    "Traditional Indian Snacks",
-  ];
+  const categories = ["All", "Makhana", "Thekua"];
 
   const filteredProducts =
     selectedCategory === "All"
-      ? PRODUCTS.slice(0, 8) // Showcase top 8 on homepage
+      ? PRODUCTS
       : PRODUCTS.filter((p) => p.category === selectedCategory);
 
   return (
@@ -38,10 +31,10 @@ export default function FeaturedSection() {
               Handcrafted Specialities
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-earth-900 tracking-tight">
-              Featured Traditional Snacks
+              Featured Makhana & Thekua
             </h2>
             <p className="text-sm sm:text-base text-earth-600 mt-2 max-w-xl font-sans">
-              Timeless taste and mindful munching. Experience our signature makhana, heirloom thekua, and fresh savoury snacks.
+              Timeless taste and mindful munching. Explore our five signature flavoured foxnut varieties and heirloom pure Desi Ghee Thekua.
             </p>
           </div>
 
@@ -60,19 +53,24 @@ export default function FeaturedSection() {
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all ${
+              className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all ${
                 selectedCategory === category
-                  ? "bg-earth-500 text-white shadow-md"
+                  ? "bg-earth-500 text-white shadow-md scale-102"
                   : "bg-cream-100 text-earth-700 hover:bg-cream-200 border border-turmeric-200/80"
               }`}
             >
               {category}
+              {category !== "All" && (
+                <span className="ml-1.5 opacity-75 text-[11px]">
+                  ({PRODUCTS.filter((p) => p.category === category).length})
+                </span>
+              )}
             </button>
           ))}
         </div>
 
         {/* Product Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
           {filteredProducts.map((product) => (
             <ProductCard
               key={product.id}
@@ -89,7 +87,7 @@ export default function FeaturedSection() {
               Planning a Festive Celebration or Corporate Gifting?
             </h3>
             <p className="text-xs sm:text-sm text-earth-600 max-w-xl">
-              We prepare customized assortment hampers with our pure desi ghee sweets and artisanal savoury packs.
+              We prepare customized assortment gift boxes with our pure desi ghee Thekua and roasted flavoured Makhana packs.
             </p>
           </div>
           <Link

@@ -52,7 +52,6 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [currentQuery, setCurrentQuery] = useState("");
   const [shopDropdownOpen, setShopDropdownOpen] = useState(false);
-  const [snacksDropdownOpen, setSnacksDropdownOpen] = useState(false);
 
   const searchInputRef = useRef<HTMLInputElement>(null);
 
@@ -124,20 +123,13 @@ export default function Navbar() {
     return pathname.startsWith(href);
   };
 
-  // Navigation Links required:
-  // Home, Shop All, Makhana, Thekua, Traditional Snacks, Cookies, About Us, Contact
+  // Navigation Links:
+  // Home, Shop All, Makhana, Thekua, About Us, Contact
   const navLinks = [
     { name: "Home", href: "/", hasDropdown: false },
     { name: "Shop All", href: "/shop", hasDropdown: true, dropdownType: "all" },
     { name: "Makhana", href: "/shop?category=Makhana", hasDropdown: false },
     { name: "Thekua", href: "/shop?category=Thekua", hasDropdown: false },
-    { 
-      name: "Traditional Snacks", 
-      href: "/shop?category=Traditional+Indian+Snacks", 
-      hasDropdown: true, 
-      dropdownType: "snacks" 
-    },
-    { name: "Cookies", href: "/shop?category=Traditional+Cookies", hasDropdown: false },
     { name: "About Us", href: "/about", hasDropdown: false },
     { name: "Contact", href: "/contact", hasDropdown: false },
   ];
@@ -229,7 +221,7 @@ export default function Navbar() {
               <form onSubmit={handleSearchSubmit} className="relative w-full">
                 <input
                   type="text"
-                  placeholder="Search makhana, thekua, nankhatai..."
+                  placeholder="Search makhana, thekua..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full pl-10 pr-20 py-2 text-xs sm:text-sm rounded-full border border-turmeric-200/90 bg-cream-100/70 hover:bg-white text-earth-800 placeholder-earth-400 focus:outline-none focus:border-turmeric-500 focus:ring-2 focus:ring-turmeric-200/50 shadow-sm transition"
@@ -287,7 +279,7 @@ export default function Navbar() {
                 <input
                   ref={searchInputRef}
                   type="text"
-                  placeholder="Search makhana, thekua, nankhatai..."
+                  placeholder="Search makhana, thekua..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full pl-9 pr-20 py-2 rounded-full border border-turmeric-300 bg-white text-earth-800 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-turmeric-400 placeholder-earth-400 shadow-sm"
@@ -325,11 +317,9 @@ export default function Navbar() {
                     className="relative group"
                     onMouseEnter={() => {
                       if (link.dropdownType === "all") setShopDropdownOpen(true);
-                      if (link.dropdownType === "snacks") setSnacksDropdownOpen(true);
                     }}
                     onMouseLeave={() => {
                       if (link.dropdownType === "all") setShopDropdownOpen(false);
-                      if (link.dropdownType === "snacks") setSnacksDropdownOpen(false);
                     }}
                   >
                     <Link
@@ -362,7 +352,7 @@ export default function Navbar() {
                             : "opacity-0 invisible -translate-y-2 pointer-events-none"
                         }`}
                       >
-                        <div className="w-[680px] bg-[#FFFDF9] rounded-2xl shadow-xl border border-turmeric-200/90 p-5 overflow-hidden">
+                        <div className="w-[540px] bg-[#FFFDF9] rounded-2xl shadow-xl border border-turmeric-200/90 p-5 overflow-hidden">
                           {/* Dropdown Header */}
                           <div className="flex items-center justify-between border-b border-turmeric-100 pb-3 mb-4">
                             <div className="flex items-center gap-2">
@@ -372,7 +362,7 @@ export default function Navbar() {
                               </span>
                             </div>
                             <span className="text-[11px] text-saffron-600 font-serif italic">
-                              100% Desi Ghee & Roasted Goodness
+                              100% Desi Ghee & Roasted Foxnuts
                             </span>
                           </div>
 
@@ -383,15 +373,15 @@ export default function Navbar() {
                                 key={cat.id}
                                 href={`/shop?category=${encodeURIComponent(cat.name)}`}
                                 onClick={() => setShopDropdownOpen(false)}
-                                className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-cream-200/80 border border-transparent hover:border-turmeric-200 transition group/cat"
+                                className="flex items-center gap-3 p-3 rounded-xl hover:bg-cream-200/80 border border-transparent hover:border-turmeric-200 transition group/cat"
                               >
-                                <div className="relative w-12 h-12 rounded-lg overflow-hidden shrink-0 bg-turmeric-100 border border-turmeric-200">
+                                <div className="relative w-14 h-14 rounded-lg overflow-hidden shrink-0 bg-turmeric-100 border border-turmeric-200">
                                   <Image
                                     src={cat.image}
                                     alt={cat.name}
                                     fill
                                     className="object-cover group-hover/cat:scale-105 transition-transform duration-300"
-                                    sizes="48px"
+                                    sizes="56px"
                                   />
                                 </div>
                                 <div className="flex-1 min-w-0">
@@ -406,6 +396,9 @@ export default function Navbar() {
                                   <p className="text-[11px] text-earth-500 truncate mt-0.5">
                                     {cat.tagline}
                                   </p>
+                                  <span className="text-[10px] text-earth-600 font-medium inline-block mt-1">
+                                    {cat.itemCount} items
+                                  </span>
                                 </div>
                               </Link>
                             ))}
@@ -421,63 +414,8 @@ export default function Navbar() {
                               onClick={() => setShopDropdownOpen(false)}
                               className="text-xs font-bold text-[#2A170D] hover:text-saffron-700 flex items-center gap-1 group/all"
                             >
-                              <span>Explore Entire Collection</span>
+                              <span>Explore Full Catalogue</span>
                               <ChevronRight className="w-3.5 h-3.5 group-hover/all:translate-x-1 transition-transform" />
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* DROPDOWN: TRADITIONAL SNACKS */}
-                    {link.dropdownType === "snacks" && (
-                      <div
-                        className={`absolute top-full left-1/2 -translate-x-1/2 pt-1 transition-all duration-200 z-50 ${
-                          snacksDropdownOpen
-                            ? "opacity-100 visible translate-y-0 pointer-events-auto"
-                            : "opacity-0 invisible -translate-y-2 pointer-events-none"
-                        }`}
-                      >
-                        <div className="w-[320px] bg-[#FFFDF9] rounded-2xl shadow-xl border border-turmeric-200/90 p-4">
-                          <div className="flex items-center gap-1.5 border-b border-turmeric-100 pb-2 mb-3">
-                            <TraditionalMandalaIcon className="w-3.5 h-3.5 text-turmeric-500" />
-                            <span className="font-serif font-bold text-xs text-[#2A170D]">
-                              Authentic Regional Flavours
-                            </span>
-                          </div>
-
-                          <div className="space-y-1.5">
-                            <Link
-                              href="/shop?category=Thekua"
-                              onClick={() => setSnacksDropdownOpen(false)}
-                              className="flex items-center justify-between p-2 rounded-lg hover:bg-cream-200/80 text-xs text-earth-700 font-medium transition"
-                            >
-                              <span>Handcrafted Bihari Thekua</span>
-                              <span className="text-[10px] text-saffron-600 font-serif">ठेकुआ</span>
-                            </Link>
-                            <Link
-                              href="/shop?category=Traditional+Indian+Snacks"
-                              onClick={() => setSnacksDropdownOpen(false)}
-                              className="flex items-center justify-between p-2 rounded-lg hover:bg-cream-200/80 text-xs text-earth-700 font-medium transition"
-                            >
-                              <span>Home-style Poha Chivda</span>
-                              <span className="text-[10px] text-saffron-600 font-serif">चिवड़ा</span>
-                            </Link>
-                            <Link
-                              href="/shop?category=Namak+Para"
-                              onClick={() => setSnacksDropdownOpen(false)}
-                              className="flex items-center justify-between p-2 rounded-lg hover:bg-cream-200/80 text-xs text-earth-700 font-medium transition"
-                            >
-                              <span>Crisp Nimki & Mathri</span>
-                              <span className="text-[10px] text-saffron-600 font-serif">नमक पारा</span>
-                            </Link>
-                            <Link
-                              href="/shop?category=Traditional+Cookies"
-                              onClick={() => setSnacksDropdownOpen(false)}
-                              className="flex items-center justify-between p-2 rounded-lg hover:bg-cream-200/80 text-xs text-earth-700 font-medium transition"
-                            >
-                              <span>Desi Ghee Nankhatai</span>
-                              <span className="text-[10px] text-saffron-600 font-serif">नानखटाई</span>
                             </Link>
                           </div>
                         </div>

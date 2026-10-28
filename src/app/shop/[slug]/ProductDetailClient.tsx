@@ -67,7 +67,7 @@ export default function ProductDetailClient({ product }: Props) {
             fill
             priority
             sizes="(max-width: 1024px) 100vw, 600px"
-            className="object-cover"
+            className="object-contain p-6"
           />
 
           {/* Badges */}
@@ -96,7 +96,7 @@ export default function ProductDetailClient({ product }: Props) {
                   activeImage === idx ? "border-earth-600 scale-102 shadow-sm" : "border-cream-300 opacity-70 hover:opacity-100"
                 }`}
               >
-                <Image src={img} alt="Thumb" fill className="object-cover" />
+                <Image src={img} alt="Thumb" fill className="object-contain p-1" />
               </button>
             ))}
           </div>

@@ -9,10 +9,10 @@ import { BRAND_CONFIG } from "@/data/products";
 export default function GallerySection() {
   const galleryItems = [
     {
-      title: "Artisanal Makhana Roasting",
-      subtitle: "Crisp jumbo foxnuts in gentle herbs",
+      title: "Peri Peri Spiced Makhana",
+      subtitle: "Crisp jumbo foxnuts in fiery zesty herbs",
       tag: "Flavoured Foxnuts",
-      image: "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=800&q=80",
+      image: "/periperimakhana.png",
       span: "col-span-1 md:col-span-2 row-span-1",
     },
     {
@@ -23,17 +23,17 @@ export default function GallerySection() {
       span: "col-span-1 row-span-1",
     },
     {
-      title: "Cardamom Scented Nankhatai",
-      subtitle: "Melt-in-mouth golden tea cookies",
-      tag: "Artisanal Bakery",
-      image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=800&q=80",
+      title: "Cream & Onion Crunch",
+      subtitle: "Velvety sour cream and garden chives",
+      tag: "Gourmet Foxnuts",
+      image: "/creamandonionmakhana.png",
       span: "col-span-1 row-span-1",
     },
     {
-      title: "Diamond-Cut Savouries",
-      subtitle: "Ajwain spiced golden namak para",
-      tag: "Crispy Classics",
-      image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80",
+      title: "Pudina Herbal Makhana",
+      subtitle: "Aromatic spearmint and chatpata rock salt",
+      tag: "Digestive Herbs",
+      image: "/pudinamakhana.png",
       span: "col-span-1 row-span-1",
     },
     {
@@ -44,10 +44,10 @@ export default function GallerySection() {
       span: "col-span-1 md:col-span-2 row-span-1",
     },
     {
-      title: "Crunchy Street Mixtures",
-      subtitle: "Roasted chana jor and lightweight poha chivda",
-      tag: "Homestyle Namkeen",
-      image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80",
+      title: "Tangy Tomato Foxnuts",
+      subtitle: "Sweet sun-ripened tomatoes and savoury cumin",
+      tag: "Kid's Favourite",
+      image: "/tangytomatomakhana.png",
       span: "col-span-1 row-span-1",
     },
   ];

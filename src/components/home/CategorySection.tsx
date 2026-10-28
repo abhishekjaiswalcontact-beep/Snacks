@@ -20,54 +20,54 @@ export default function CategorySection() {
             Shop by Category
           </h2>
           <p className="text-sm sm:text-base text-earth-600 mt-3 font-sans">
-            From crunchy roasted makhana to heirloom festive sweets and flaky savouries, explore traditional snacks hand-made for every craving.
+            Explore our two signature handcrafted snack collections — crispy slow-roasted Makhana in savoury and spicy seasonings, and authentic Bihari Thekua made with pure desi ghee.
           </p>
         </div>
 
-        {/* Categories Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        {/* Categories Grid - 2 Column Balanced Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {CATEGORIES.map((category) => (
             <Link
               key={category.id}
               href={`/shop?category=${encodeURIComponent(category.name)}`}
-              className="group relative rounded-2xl overflow-hidden bg-white border border-turmeric-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
+              className="group relative rounded-3xl overflow-hidden bg-white border border-turmeric-200/90 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col"
             >
               {/* Category Image */}
-              <div className="relative aspect-square w-full overflow-hidden bg-cream-100">
+              <div className="relative aspect-[16/10] sm:aspect-[4/3] w-full overflow-hidden bg-earth-900">
                 <Image
                   src={category.image}
                   alt={category.name}
                   fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
-                  className="object-cover group-hover:scale-108 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, 500px"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-earth-950/70 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-t from-earth-950/75 via-transparent to-transparent opacity-85 group-hover:opacity-90 transition-opacity" />
                 
                 {/* Hindi Monogram Overlay in top corner */}
-                <span className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-earth-800 text-[11px] font-medium px-2 py-0.5 rounded-full shadow-sm">
+                <span className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm text-earth-900 text-xs font-semibold px-3 py-1 rounded-full shadow-sm border border-turmeric-200">
                   {category.hindiName}
                 </span>
 
                 {/* Overlaid Count & Badge */}
-                <div className="absolute bottom-3 left-3 right-3 text-white">
-                  <span className="text-[10px] uppercase font-bold tracking-wider text-turmeric-300">
+                <div className="absolute bottom-4 left-5 right-5 text-white">
+                  <span className="text-[11px] uppercase font-bold tracking-wider text-turmeric-300">
                     {category.tagline}
                   </span>
-                  <h3 className="font-serif text-lg font-bold text-white group-hover:text-turmeric-200 transition">
+                  <h3 className="font-serif text-2xl font-bold text-white group-hover:text-turmeric-200 transition">
                     {category.name}
                   </h3>
                 </div>
               </div>
 
               {/* Card Footer */}
-              <div className="p-4 flex-1 flex flex-col justify-between bg-white">
-                <p className="text-xs text-earth-600 line-clamp-2 leading-relaxed">
+              <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between bg-white">
+                <p className="text-xs sm:text-sm text-earth-600 leading-relaxed font-sans">
                   {category.description}
                 </p>
 
-                <div className="pt-3 mt-2 border-t border-cream-200 flex items-center justify-between text-xs font-bold text-earth-700 group-hover:text-saffron-600 transition">
-                  <span>Explore ({category.itemCount} Snacks)</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                <div className="pt-4 mt-3 border-t border-cream-200 flex items-center justify-between text-xs sm:text-sm font-bold text-earth-800 group-hover:text-saffron-600 transition">
+                  <span>Explore All ({category.itemCount} Varieties)</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
                 </div>
               </div>
             </Link>

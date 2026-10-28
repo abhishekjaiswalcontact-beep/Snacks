@@ -34,13 +34,13 @@ export default function BrandStorySection() {
               </div>
 
               {/* Inset Secondary Image Card */}
-              <div className="absolute -bottom-8 -right-6 sm:-right-8 w-44 sm:w-52 aspect-square rounded-2xl overflow-hidden border-4 border-white shadow-2xl bg-white hidden sm:block">
+              <div className="absolute -bottom-8 -right-6 sm:-right-8 w-44 sm:w-52 aspect-square rounded-2xl overflow-hidden border-4 border-white shadow-2xl bg-cream-100 hidden sm:block p-3">
                 <Image
-                  src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80"
-                  alt="Crispy Namak Para tea time"
+                  src="/creamandonionmakhana.png"
+                  alt="Crunchy Roasted Makhana"
                   fill
                   sizes="220px"
-                  className="object-cover"
+                  className="object-contain p-2"
                 />
               </div>
 
@@ -72,7 +72,7 @@ export default function BrandStorySection() {
                 In a world of fast food and artificial shortcuts, <strong>Aayusha Swad</strong> was born out of a simple nostalgic longing: the unforgettable warmth of mother&apos;s kitchen, the comforting aroma of desi ghee during festive seasons, and the laughter shared with family over a steaming cup of tea.
               </p>
               <p>
-                Every single item in our kitchen is crafted with reverence for traditional culinary rituals. Whether it is our hand-pressed <strong>Thekua</strong> flavoured with fennel and cardamom, lightly seasoned <strong>Makhana</strong> slow-roasted to a crispy crunch, or diamond-cut <strong>Namak Para</strong>, we honor recipes that have stood the test of generations.
+                Every single item in our kitchen is crafted with reverence for traditional culinary rituals. Whether it is our hand-pressed <strong>Thekua</strong> flavoured with fennel and cardamom or nutritious <strong>Makhana</strong> slow-roasted to a crispy crunch, we honor recipes that have stood the test of generations.
               </p>
               <p>
                 We believe good food doesn&apos;t need hidden additives. It only requires honesty in sourcing, patience in cooking, and the joy of creating something pure for the people you cherish.

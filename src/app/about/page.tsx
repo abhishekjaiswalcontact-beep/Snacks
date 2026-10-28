@@ -58,7 +58,7 @@ export default function AboutPage() {
                 As modern snack aisles filled with mass-produced packets stuffed with palm oils, artificial flavours, and chemical preservatives, we realized something precious was being forgotten — the authentic, wholesome goodness of genuine home cooking.
               </p>
               <p>
-                <strong>Aayusha Swad</strong> was conceived to restore that sacred connection. We started with hand-moulded Bihari Thekua, slowly expanded to nutrient-packed roasted Makhana, flaky Methi Mathri, and crumbly Nankhatai, treating every batch with the devotion of a family kitchen.
+                <strong>Aayusha Swad</strong> was conceived to restore that sacred connection. We focus on our signature handcrafted specialties: authentic hand-moulded Bihari Thekua and five flavours of nutrient-packed slow-roasted Makhana, treating every batch with the devotion of a family kitchen.
               </p>
             </div>
           </div>

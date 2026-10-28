@@ -84,7 +84,7 @@ export default function Footer() {
             </div>
 
             <p className="text-sm text-cream-300 leading-relaxed pr-4">
-              Aayusha Swad is devoted to reviving the heartwarming tastes of Indian heritage. From crispy hand-pressed Thekua to lightly roasted nutritious Makhana and aromatic Nankhatai, we celebrate traditional recipes made with genuine love and honest ingredients.
+              Aayusha Swad is devoted to reviving the heartwarming tastes of Indian heritage. From crispy hand-pressed Thekua to lightly roasted nutritious Makhana, we celebrate traditional recipes made with genuine love and honest ingredients.
             </p>
 
             <div className="flex items-center gap-3 pt-2">

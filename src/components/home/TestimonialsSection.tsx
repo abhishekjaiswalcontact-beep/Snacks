@@ -22,12 +22,12 @@ export default function TestimonialsSection() {
       snackLoved: "Peri Peri Makhana",
     },
     {
-      name: "Tea-Time Connoisseur",
+      name: "Mindful Snacker",
       role: "Sample Review • Mumbai",
       rating: 5,
       comment:
-        "Finding melt-in-mouth Nankhatai made with real desi ghee is so rare today. These cookies crumble with such gentle cardamom fragrance. Truly made with love and care.",
-      snackLoved: "Homemade Nankhatai",
+        "The Cream & Onion Makhana is our family's absolute favorite. Incredibly crunchy, perfectly seasoned with herbs, and roasted without any heavy oiliness. Truly wholesome.",
+      snackLoved: "Cream & Onion Makhana",
     },
   ];
 

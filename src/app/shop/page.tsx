@@ -30,7 +30,7 @@ function ShopContent() {
   const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
 
   // Extract all unique tags
-  const allTags = ["All", "Bestseller", "Desi Ghee", "Spicy", "Traditional", "Sweet"];
+  const allTags = ["All", "Bestseller", "Healthy", "Spicy", "Desi Ghee", "Traditional"];
 
   // Filter and sort products
   const filteredProducts = useMemo(() => {
@@ -87,10 +87,10 @@ function ShopContent() {
             Fresh Small-Batch Pantry
           </div>
           <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white">
-            Explore All Traditional Snacks
+            Handcrafted Makhana & Thekua
           </h1>
           <p className="text-sm sm:text-base text-cream-200 max-w-2xl mx-auto font-sans">
-            Handcrafted with authentic heritage recipes, pure desi ghee, and wholesome ingredients. Shipped fresh directly to your doorstep.
+            Handcrafted with authentic heritage recipes, pure desi ghee, and roasted foxnuts. Shipped fresh directly to your doorstep.
           </p>
         </div>
       </div>
